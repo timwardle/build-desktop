@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "Setting sources..."
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list > /dev/null
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E9CFF4E
+
+sudo apt-get update
+
+echo "Installing..."
+sudo apt-get install -y spotify-client-qt spotify-client-gnome-support
